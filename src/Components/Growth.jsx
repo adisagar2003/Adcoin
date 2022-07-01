@@ -22,12 +22,13 @@ function Growth() {
     
         </div>
 
-      
+<div class='ml-10'>    
       <LineChart width={600} height={250} data={graphData} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
     <Line type="monotone" dataKey="growth" stroke="#8884d8" />
 
     <Tooltip />
   </LineChart>
+  </div>  
     </div>
   )
 }
