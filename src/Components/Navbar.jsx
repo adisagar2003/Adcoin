@@ -5,6 +5,7 @@ import {AiOutlineBell} from 'react-icons/ai';
 import {AiFillDownCircle,AiFillUpCircle} from 'react-icons/ai';
 import { CircularProgressbar } from 'react-circular-progressbar';
 function Navbar() {
+ 
     const   [metamaskResponse,setMetamaskResponse]= useState(null) 
     const connectWallet = ()=>{
         if (window.ethereum){
