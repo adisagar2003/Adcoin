@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom';
 import {FaAngleDoubleUp} from 'react-icons/fa';
-import {AiOutlineArrowUp,AiOutlineArrowDown} from 'react-icons/ai'
+import {AiOutlineArrowUp,AiOutlineArrowDown} from 'react-icons/ai';
+import { FaEthereum } from 'react-icons/fa';
 
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 function BalanceWallet() {
@@ -24,7 +25,7 @@ function BalanceWallet() {
         Balance
         <div class='font-semibold text-slate-100 mt-[3%] '>
        
-            <text class='text-3xl'>USD 24.2789$</text>
+            <text class='text-3xl'><span class='text-purple-500'><FaEthereum /> </span> 24.2789 <span class='text-slate-400'>ETH</span></text>
          <div class='mt-[10%]'>
 
             <div class='float-left flex gap-3  border-slate-500 border-r-2 w-[50%] '>
