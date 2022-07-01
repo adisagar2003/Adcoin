@@ -1,11 +1,38 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { render } from 'react-dom';
 import {FaAngleDoubleUp} from 'react-icons/fa';
 import {AiOutlineArrowUp,AiOutlineArrowDown} from 'react-icons/ai';
 import { FaEthereum } from 'react-icons/fa';
-
+import {ethers} from 'ethers'
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 function BalanceWallet() {
+  const [ethBalance,setEthBalance]= useState(null);
+  const [walletAddress,setWalletAddress] = useState(null);
+
+  
+  const network = 'rinkeby';
+  const provider = ethers.getDefaultProvider(network);
+  let balance = null;
+  let ethereumBalance = 0
+  if (localStorage.getItem('Wallet')){
+    balance = localStorage.getItem('Wallet');
+
+
+    const network = 'rinkeby' // use rinkeby testnet
+    const provider = ethers.getDefaultProvider(network)
+    const address = balance;
+    provider.getBalance(address).then((balance) => {
+      // convert a currency unit from wei to ether
+      const balanceInEth = ethers.utils.formatEther(balance)
+      ethereumBalance = balanceInEth;
+      localStorage.setItem('ethBalance',balanceInEth)
+      console.log(`balance: ${balanceInEth} ETH`)  
+     })
+  }
+
+  
+  
+
     const data = [{name: 'Page A', uv: 400, pv: 2400, amt: 2400},];
     const RenderLineChart = ()=>{
         render(
@@ -25,7 +52,7 @@ function BalanceWallet() {
         Balance
         <div class='font-semibold text-slate-100 mt-[3%] '>
        
-            <text class='text-3xl'><span class='text-purple-500'><FaEthereum /> </span> 24.2789 <span class='text-slate-400'>ETH</span></text>
+            <text class='text-3xl'><span class='text-purple-500'><FaEthereum /> </span> {balance?localStorage.getItem('ethbalance'):'0'} <span class='text-slate-400'>ETH</span></text>
          <div class='mt-[10%]'>
 
             <div class='float-left flex gap-3  border-slate-500 border-r-2 w-[50%] '>

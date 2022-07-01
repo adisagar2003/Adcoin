@@ -4,20 +4,16 @@ import {BsSearch} from 'react-icons/bs'
 import {AiOutlineBell} from 'react-icons/ai';
 import {AiFillDownCircle,AiFillUpCircle} from 'react-icons/ai';
 import { CircularProgressbar } from 'react-circular-progressbar';
+import axios from 'axios';
+import {ethers} from 'ethers';
+
 
 function Navbar() {
 
     const   [metamaskResponse,setMetamaskResponse]= useState(null) 
     const connectWallet = ()=>{
-        if (window.ethereum){
-            window.ethereum.request({method:'eth_requestAccounts'}).then((res)=>{
-setMetamaskResponse(metamaskResponse)
-console.log(res)
-            })
-        }
-        else{
-            alert('Install metamask wallet')
-        }
+      console.log('wallet gets connected here');
+
     }
     const [dropdown,isDropdown] = useState(true);
   return (

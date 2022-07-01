@@ -1,10 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import {BiCoin,BiBitcoin} from 'react-icons/bi';
 import {FaEthereum,FaAngleDoubleUp} from 'react-icons/fa';
 import {FcBullish,FcBearish} from 'react-icons/fc'
 function Wallet() {
+  const [walletPercentage,setWalletPercentage] = useState(4);
   return (
     <div>
         <span class='p-1 font-semibold'>Wallet</span>
@@ -14,7 +15,7 @@ function Wallet() {
         </div>
       
         <div style={{width:100,height:50}} class='p-4 mt-5 mr-5'>
-        <CircularProgressbar value={90} text={`90%`} />
+        <CircularProgressbar value={walletPercentage} text={`${walletPercentage}%`} />
         </div>
         <div class='flex flex-row    float-right w-[60%] gap-10'>
         <div class='float-right  relative bottom-[6vh]  flex flex-col gap-3 mb-4'>
