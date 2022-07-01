@@ -4,6 +4,8 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import BalanceWallet from './Components/Balance'
 import Wallet from './Components/Wallet'
+import Convert from './Components/Convert'
+import Growth from './Components/Growth'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +23,14 @@ function App() {
 
   </div>
   
+  <div class=' '>
+<Convert />
+
+
+  </div>
+  <div class=''>
+  <Growth />
+  </div>
   
   
   <div>

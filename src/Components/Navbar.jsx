@@ -22,6 +22,7 @@ console.log(res)
     <div class=''>
    <div class='bg-slate-300 dark:bg-[#0d1118] dark:text-slate-100 p-5 flex flex-row gap-1 '>
     <Link to='/'>
+ 
 <a class='p-1 font-bold md:pr-[40vh] md:pr-[10vh]  pr-[4vh] '>KeCoin</a></Link>
 <Link to='/dashboard'>
 <a class=' md:pr-[5vh] font-semibold opacity-[0.6] hover:opacity-[1] transition-all'>Dashboard</a></Link>
