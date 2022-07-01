@@ -3,6 +3,7 @@ import logo from './logo.svg'
 import './App.css'
 import Navbar from './Components/Navbar'
 import BalanceWallet from './Components/Balance'
+import Wallet from './Components/Wallet'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,7 +17,7 @@ function App() {
   <BalanceWallet />
   </div>
   <div class='float-left mt-[5%] p-2 font-bold text-white w-[40%] rounded-xl   bg-slate-900 '>
-
+<Wallet />
 
   </div>
   
