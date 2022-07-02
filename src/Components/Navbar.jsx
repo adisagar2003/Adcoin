@@ -12,7 +12,12 @@ function Navbar() {
 
     const   [metamaskResponse,setMetamaskResponse]= useState(null) 
     const connectWallet = ()=>{
-      console.log('wallet gets connected here');
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+console.log(window.ethereum)
+      if (provider){
+       console.log(provider.getBalance(''))
+      }
+
 
     }
     const [dropdown,isDropdown] = useState(true);
@@ -25,7 +30,7 @@ function Navbar() {
 <Link to='/dashboard'>
 <a class=' md:pr-[5vh] font-semibold opacity-[0.6] hover:opacity-[1] transition-all'>Dashboard</a></Link>
 <Link to='/exchange'>
-<a class=' md:pr-[5vh] font-semibold opacity-[0.6] hover:opacity-[1] transition-all'>Exchange</a></Link>
+<a class=' md:pr-[5vh] font-semibold opacity-[0.6] hover:opacity-[1] transition-all'>Transfer</a></Link>
 <Link to='/wallet'>
 <a class=' md:pr-[5vh] font-semibold opacity-[0.6] hover:opacity-[1] transition-all'>Wallet</a></Link>
 <Link to='/market'>
